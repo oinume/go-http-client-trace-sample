@@ -12,6 +12,7 @@ import (
 )
 
 func main() {
+	// TODO: http trace sample
 	exporter, flush, err := NewExporter("sample", true)
 	if err != nil {
 		log.Fatal(err)
