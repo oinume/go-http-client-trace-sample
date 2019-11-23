@@ -14,7 +14,7 @@ import (
 )
 
 func main() {
-	// TODO: http trace sample
+	// TODO: Stackdriver exporter
 	exporter, flush, err := NewExporter("sample")
 	if err != nil {
 		log.Fatal(err)
