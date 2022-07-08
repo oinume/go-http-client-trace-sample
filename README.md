@@ -1,4 +1,4 @@
-# opencensus-client-trace-sample
+# go-http-client-trace-sample
 
 This is an example project for OpenCensus and httptrace.ClientTrace.
 See [my blog post](https://journal.lampetty.net/entry/opencensus-httptrace) for details.
