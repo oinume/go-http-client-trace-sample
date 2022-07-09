@@ -6,14 +6,14 @@ import (
 	"net/http"
 	"net/http/httptrace"
 
-	"github.com/oinume/opencensus-client-trace-sample/opencensus"
 	"go.opencensus.io/plugin/ochttp"
 	"go.opencensus.io/trace"
+
+	"github.com/oinume/opencensus-client-trace-sample/opencensus"
 )
 
 func main() {
-	// TODO: Stackdriver exporter
-	exporter, flush, err := opencensus.NewExporter("sample")
+	exporter, flush, err := opencensus.NewExporter("ochttp_client_trace")
 	if err != nil {
 		log.Fatal(err)
 	}
