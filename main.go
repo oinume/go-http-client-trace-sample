@@ -6,13 +6,13 @@ import (
 	"net/http"
 	"net/http/httptrace"
 
-	"github.com/oinume/opencensus-client-trace-sample/opencensus"
 	"go.opencensus.io/plugin/ochttp"
 	"go.opencensus.io/trace"
+
+	"github.com/oinume/opencensus-client-trace-sample/opencensus"
 )
 
 func main() {
-	// TODO: Stackdriver exporter
 	exporter, flush, err := opencensus.NewExporter("sample")
 	if err != nil {
 		log.Fatal(err)
@@ -26,7 +26,7 @@ func main() {
 	if err := httpGet(ctx, "https://journal.lampetty.net/"); err != nil {
 		log.Fatal(err)
 	}
-	//time.Sleep(1 * time.Second)
+	// time.Sleep(1 * time.Second)
 }
 
 func httpGet(ctx context.Context, url string) error {
