@@ -37,10 +37,7 @@ func main() {
 func httpGet(ctx context.Context, url string) error {
 	ctx, span := otel.Tracer("main").Start(ctx, "httpGet")
 	defer span.End()
-	span.SetAttributes(attribute.KeyValue{
-		Key:   "url",
-		Value: attribute.StringValue(url),
-	})
+	span.SetAttributes(attribute.Key("url").String(url))
 
 	clientTrace := otelhttptrace.NewClientTrace(ctx)
 	ctx = httptrace.WithClientTrace(ctx, clientTrace)
